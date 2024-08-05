@@ -1,0 +1,20 @@
+package components
+
+templ Layout(contents templ.Component) {
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>The Perfect Stack</title>
+			<link rel="stylesheet" href="/assets/picocss@2.0.6.min.css"/>
+			<link rel="stylesheet" href="/assets/styles.css"/>
+			<script src="/assets/htmx@2.0.1.min.js" type="module"></script>
+			<script src="/assets/alpinejs@3.14.1.min.js"></script>
+		</head>
+		<body>
+			<main class="container">
+				@contents
+			</main>
+		</body>
+	</html>
+}

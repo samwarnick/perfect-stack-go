@@ -1,0 +1,29 @@
+package pages
+
+import (
+	"github.com/samwarnick/perfect-stack-go/components"
+	"github.com/samwarnick/perfect-stack-go/models"
+)
+
+templ index(name string, messages []models.Message) {
+	@components.Hello(name)
+	<ul id="messages">
+		for _, m := range messages {
+			<li>{ m.Message }</li>
+		}
+	</ul>
+	<form hx-post="/" hx-swap="outerHTML" hx-target="#messages" hx-select="#messages">
+		<fieldset role="group">
+			<input
+				name="message"
+				type="message"
+				placeholder="Enter your message"
+			/>
+			<input type="submit" value="Submit"/>
+		</fieldset>
+	</form>
+}
+
+templ Index(name string, messages []models.Message) {
+	@components.Layout(index(name, messages))
+}
